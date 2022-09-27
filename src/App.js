@@ -29,30 +29,16 @@ function App() {
   ];
   return (
     <div className="App">
-      <ExpenseItem
-        title={expense[0].title}
-        amount={expense[0].amount}
-        date={expense[0].date.toISOString()}
-        location={expense[0].location}
-      />
-      <ExpenseItem
-        title={expense[1].title}
-        amount={expense[1].amount}
-        date={expense[1].date.toISOString()}
-        location={expense[1].location}
-      />
-      <ExpenseItem
-        title={expense[2].title}
-        amount={expense[2].amount}
-        date={expense[2].date.toISOString()}
-        location={expense[2].location}
-      />
-      <ExpenseItem
-        title={expense[3].title}
-        amount={expense[3].amount}
-        date={expense[3].date.toISOString()}
-        location={expense[3].location}
-      />
+      {expense.map((e) => {
+        return (
+          <ExpenseItem
+            title={e.title}
+            amount={e.amount}
+            date={e.date.toISOString()}
+            location={e.location}
+          />
+        );
+      })}
     </div>
   );
 }

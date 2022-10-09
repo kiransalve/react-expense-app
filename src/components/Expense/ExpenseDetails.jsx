@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const ExpenseDetails = (props) => {
-
+    //console.log(props.title);
     return (
         <div className="expense-item__description">
             <h2>{props.title}</h2>

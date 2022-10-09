@@ -25,7 +25,6 @@ const ExpenseForm = (props) => {
 
         props.onSaveExpenseData(expenseData) // send data to NewExpense component
 
-        //console.log(expenseData)
         setEnteredTitle('')
         setEnteredAmount('')
         setEnteredDate('')
@@ -55,6 +54,7 @@ const ExpenseForm = (props) => {
                     </div>
                 </div>
                 <div className='new-expense__actions'>
+                    <button type="button" onClick={props.onCancal}>Cancal</button>
                     <button type='submit'>Add Expense</button>
                 </div>
             </form>

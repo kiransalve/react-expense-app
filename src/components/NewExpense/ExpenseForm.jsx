@@ -5,39 +5,27 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredamount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState("");
-    // const [userInput, setUserInput] = useState({
-    //     enteredTitle: '',
-    //     amount: '',
-    //     date: ''
-    // })
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
-        // setUserInput({ ...userInput, enteredTitle: event.target.value })
-        // // if state is depend on previous state then use function form
-        // setUserInput((prevState) => {
-        //     return { ...prevState, enteredTitle: event.target.value }
-        // })
     }
-
     const amountHandaler = (event) => {
         setEnteredAmount(event.target.value)
-        // setUserInput({ ...userInput, amount: event.target.value })
-
     }
     const dateHandaler = (event) => {
         setEnteredDate(event.target.value)
-        // setUserInput({ ...userInput, date: event.target.value })
     }
     const submitHandler = (event) => {
         event.preventDefault();
-
         const expenseData = {
             title: enteredTitle,
             amount: enteredamount,
             date: new Date(enteredDate)
         }
-        props.onSaveExpenseData(expenseData)
+
+        props.onSaveExpenseData(expenseData) // send data to NewExpense component
+
+        //console.log(expenseData)
         setEnteredTitle('')
         setEnteredAmount('')
         setEnteredDate('')

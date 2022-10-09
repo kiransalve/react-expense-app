@@ -12,19 +12,19 @@ const DUMMY_EXPENSE = [
     id: "k2",
     title: "Glocery",
     amount: 500,
-    date: new Date(2022, 6, 6),
+    date: new Date(2021, 6, 6),
   },
   {
     id: "k3",
     title: "Shopping",
     amount: 100,
-    date: new Date(2022, 7, 7),
+    date: new Date(2020, 7, 7),
   },
   {
     id: "k4",
     title: "Bike Servicing",
     amount: 200,
-    date: new Date(2022, 8, 8),
+    date: new Date(2021, 8, 8),
   },
 ];
 

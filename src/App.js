@@ -1,49 +1,35 @@
-import { useState } from "react";
-import Expenses from "./components/Expense/Expenses";
-import NewExpense from "./components/NewExpense/NewExpense";
-const DUMMY_EXPENSE = [
-  {
-    id: "k1",
-    title: "Car Insurance",
-    amount: 254,
-    date: new Date(2022, 5, 5),
-  },
-  {
-    id: "k2",
-    title: "Glocery",
-    amount: 500,
-    date: new Date(2021, 6, 6),
-  },
-  {
-    id: "k3",
-    title: "Shopping",
-    amount: 100,
-    date: new Date(2020, 7, 7),
-  },
-  {
-    id: "k4",
-    title: "Bike Servicing",
-    amount: 200,
-    date: new Date(2021, 8, 8),
-  },
-];
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signup from "./component/Auth/Signup/Signup";
+import Header from "./component/Header/Header";
+import Home from "./component/Home/Home";
+import Login from "./component/Auth/Login/Login";
+import Expense from "./component/Expense/Expense";
+import UserProfile from "./component/UserProfile/UserProfile";
+import { Provider, useSelector } from "react-redux";
+import store from "./store/store";
 
-const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSE);
-
-  const addExpenseHandaler = (expense) => {
-    setExpenses((prevExp) => {
-      return [expense, ...prevExp];
-    });
-    console.log(expense);
-  };
+function App() {
+  const loggedInUser = localStorage.getItem("idToken");
 
   return (
-    <div className="App">
-      <NewExpense onAddExpense={addExpenseHandaler} />
-      <Expenses item={expenses} />
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="*" element={<Home />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          {loggedInUser && (
+            <Route path="/expense" element={<Expense />}></Route>
+          )}
+          {loggedInUser && (
+            <Route path="/userProfile" element={<UserProfile />}></Route>
+          )}
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
-};
+}
 
 export default App;

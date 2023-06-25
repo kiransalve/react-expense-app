@@ -1,19 +1,19 @@
-# Getting Started with Create React App
+Expense Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live :  https://react-http-72ccd.web.app
+Build with React JS, Redux Toolkit, Firebase
 
-## Available Scripts
+Features : Authentication | CRUD operation Expense | User Specific Expense |
+           Activate Premium Features - Like Dark Theme and Download Expense
 
-In the project directory, you can run:
+Home Page :
 
-### `npm start`
+![image](https://github.com/kiransalve/react-expense-app/assets/90862340/59d18290-9d38-49ee-a7ce-7cbe75a18b87)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Expense Page :
 
+<<<<<<< HEAD
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
@@ -81,3 +81,6 @@ git push -u origin main
 git remote add origin https://github.com/kiransalve/react-expense-tracker.git
 git branch -M main
 git push -u origin main
+=======
+![image](https://github.com/kiransalve/react-expense-app/assets/90862340/e0ee9627-330c-410f-b582-0234d55c78f3)
+>>>>>>> 517ade49f83f6285210284b1c651e747b25f6de7

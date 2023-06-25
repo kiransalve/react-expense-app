@@ -17,6 +17,7 @@ header {
   padding: 10px;
 }
 
+
 nav {
   display: flex;
   margin-right: 20px;
@@ -40,13 +41,13 @@ nav a {
   border-radius: 10px;
   padding: 5px;
 }
-nav a:hover,
-.logout:hover {
+nav a:hover, .logout:hover{
   color: black;
   background-color: #fff;
+
 }
 
-.logout {
+.logout{
   font-size: 20px;
   cursor: pointer;
   outline: none;

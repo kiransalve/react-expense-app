@@ -4,9 +4,9 @@
   text-align: center;
 }
 
-.home h1 {
+.home-title {
   font-size: 3em;
-  margin-bottom: 20px;
+  margin: 50px;
 }
 
 .home p {

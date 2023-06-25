@@ -27,7 +27,8 @@ input[type="password"] {
   border: 1px solid #ccc;
 }
 
-input[type="submit"] {
+
+.forgot,input[type="submit"] {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -38,6 +39,6 @@ input[type="submit"] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover {
+.forgot:hover,[type="submit"]:hover {
   background-color: #005fe6;
 }

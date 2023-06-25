@@ -8,9 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
-    const dispatch = useDispatch()    
-    const user = useSelector((state) => state.auth.user)
-    const IDtoken = useSelector((state) => state.auth.idToken)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const loggedInUser = localStorage.getItem('user');
@@ -23,7 +21,7 @@ const Login = () => {
         e.preventDefault()
         try {
             const response = await fetch(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAzY6ra6-FLATrk0g7BI9QGqqxwaucV4e0",
+                "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBCoKzZHD2w9DdTvYtOvlQQNF1M8-LCKjA",
                 {
                     method: "POST",
                     headers: {
@@ -35,37 +33,38 @@ const Login = () => {
                     })
                 })
             const data = await response.json();
-            if (data) {
-                navigate("/expense")
-                dispatch(login(data))
-            }
+            dispatch(login(data))
+            navigate("/expense")
         } catch (error) {
             alert(error.message)
         }
     }
-    
+
 
     const handleForgetPassword = async () => {
         const email = prompt("Enter your email : ")
-        try{
-            const response = await fetch(
-                "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAzY6ra6-FLATrk0g7BI9QGqqxwaucV4e0"
-            ,{
-                method:"POST",
-                headers:{
-                    "Content-Type": "application/json"
-                },
-                body:JSON.stringify({
-                    requestType:"PASSWORD_RESET",
-                    email:email,
-                })
-            })
-            const data = await response.json();
-            console.log(data)
-            alert("A password reset link has been sent to your email. Please check your inbox.")
-        }catch(error){
-            console.error(error)
+        if (email) {
+            try {
+                const response = await fetch(
+                    "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBCoKzZHD2w9DdTvYtOvlQQNF1M8-LCKjA"
+                    , {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            requestType: "PASSWORD_RESET",
+                            email: email,
+                        })
+                    })
+                const data = await response.json();
+                alert("A password reset link has been sent to your email. Please check your inbox.")
+                navigate("/login")
+            } catch (error) {
+                console.error(error)
+            }
         }
+
     }
 
     return (
@@ -85,9 +84,9 @@ const Login = () => {
                     id='password'
                     value={password}
                     onChange={(event) => setPassword(event.target.value)} required
-                />           
+                />
                 <input type='submit' value='Login' />
-                <button onClick={handleForgetPassword}>Forgot Password</button>
+                <button className='forgot' onClick={handleForgetPassword}>Forgot Password</button>
             </form>
         </div>
 

@@ -15,7 +15,7 @@ const Signup = () => {
         if (password.length > 5 && password === cpassword) {
             try {
                 const response = await fetch(
-                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAzY6ra6-FLATrk0g7BI9QGqqxwaucV4e0", {
+                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBCoKzZHD2w9DdTvYtOvlQQNF1M8-LCKjA", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

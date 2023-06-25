@@ -3,10 +3,16 @@
   padding: 50px;
   text-align: center;
 }
+.totalSalary,
+.inHandNow,
+.totalExpense {
+  font-weight: 700;
+}
 
-.expense h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+.expense-title {
+  font-size: 1.5em;
+  margin-top: 20px;
+  font-weight: 600;
 }
 .message-container {
   position: fixed;
@@ -15,7 +21,7 @@
   z-index: 9999;
 }
 
-.message {
+.incomplete {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
@@ -24,17 +30,29 @@
   padding: 5px;
 }
 
+.complete {
+  color: #6bee1e;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  height: 20px;
+  padding: 5px;
+}
+
 .expense-subtitle {
   font-size: 15px;
-  margin-bottom: 40px;
 }
 .userProfile-link {
-  background-color: transparent;
   border: none;
   text-decoration: none;
   font-weight: 500;
-  color: black;
   cursor: pointer;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.userProfile-link:hover {
+  color: #fff;
+  background-color: rgb(150, 221, 36);
 }
 
 .verify-link {
@@ -52,7 +70,6 @@
   justify-content: center;
 }
 .expense-form {
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
 }
@@ -96,31 +113,13 @@ form {
   margin-bottom: 10px;
 }
 
-.expense-list ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.expense-list li {
-  border: 1px solid;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 15px;
-}
-
-.expense-list li div {
-  margin-bottom: 5px;
-}
 .expense.dark {
   background-color: #1e1e1e;
   color: #fff;
 }
 
-.update,
-.delete,
+.updateExpense,
+.deleteExpense,
 .activate-premium,
 .downloadCSV {
   padding: 9px 15px;
@@ -130,4 +129,42 @@ form {
   border: none;
   cursor: pointer;
   margin: 6px;
+}
+
+.expense-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.expense-list th,
+.expense-list td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.expense-list th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.expense-list td {
+  text-align: center;
+}
+
+.expense-list .updateExpense,
+.expense-list .deleteExpense {
+  padding: 6px 10px;
+}
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+.totalsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
